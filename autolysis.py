@@ -3,8 +3,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-import argparse
-import openai  # Make sure you install this library: pip install openai
+import openai  # Ensure the library is installed using pip install openai
 
 # Function to analyze the data (basic summary stats, missing values, correlation matrix)
 def analyze_data(df):
@@ -85,8 +84,6 @@ def visualize_data(corr_matrix, outliers, df, output_dir):
 
 
 # Function to create the README.md with a narrative and visualizations
-# Function to create the README.md with a narrative and visualizations
-# Function to create the README.md with a narrative and visualizations
 def create_readme(summary_stats, missing_values, corr_matrix, outliers, output_dir):
     print("Creating README file...")  # Debugging line
     # Write the analysis report to a markdown file
@@ -156,68 +153,11 @@ def create_readme(summary_stats, missing_values, corr_matrix, outliers, output_d
             f.write("The analysis has provided insights into the dataset, including summary statistics, outlier detection, and correlations between key variables.\n")
             f.write("The generated visualizations and statistical insights can help in understanding the patterns and relationships in the data.\n\n")
 
-            # Adding Story Section
-            f.write("## Data Story\n")
-            f.write("Based on the data analysis, here is a creative narrative that interprets the findings in an engaging and detailed manner:\n\n")
-
         print(f"README file created: {readme_file}")  # Debugging line
         return readme_file
     except Exception as e:
         print(f"Error writing to README.md: {e}")
         return None
-
-
-
-
-# Function to generate a detailed story using the new OpenAI API through the proxy
-def question_llm(prompt, context):
-    print("Generating story using LLM...")  # Debugging line
-    try:
-        # Set OpenAI API key
-        openai.api_key = os.getenv("AIPROXY_TOKEN")
-
-        # Set the custom API base URL for AI Proxy (ensure there's no trailing slash)
-        openai.api_base = "https://aiproxy.sanand.workers.dev/openai/v1"  # Corrected endpoint
-
-        # Enhance the prompt to ask for a more detailed story with paragraphs and necessary structure
-        full_prompt = f"""
-        Based on the following data analysis, please generate a creative and engaging story. The story should include multiple paragraphs, a clear structure with an introduction, body, and conclusion, and should feel like a well-rounded narrative.
-
-        Context:
-        {context}
-
-        Data Analysis Prompt:
-        {prompt}
-
-        The story should be elaborate and cover the following:
-        - An introduction to set the context.
-        - A detailed body that expands on the data points and explores their significance.
-        - A conclusion that wraps up the analysis and presents any potential outcomes or lessons.
-        - Use transitions to connect ideas and keep the narrative flowing smoothly.
-        - Format the story with clear paragraphs and structure.
-        """
-
-        # Request to AI Proxy's chat completions endpoint for gpt-4o-mini model
-        response = openai.ChatCompletion.create(
-            model="gpt-4o-mini",  # Using GPT-4o-Mini model
-            messages=[ 
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": full_prompt}
-            ],
-            max_tokens=1000,  # Increased max_tokens for longer output
-            temperature=0.7,
-        )
-
-        # Extract the generated text from the response
-        story = response['choices'][0]['message']['content'].strip()
-
-        print("Story generated.")  # Debugging line
-        return story
-
-    except Exception as e:
-        print(f"Error with OpenAI API: {e}")
-        return "Failed to generate story."
-
 
 # Main function that integrates all the steps
 def main(csv_file, api_token):
@@ -236,26 +176,12 @@ def main(csv_file, api_token):
         return
 
     summary_stats, missing_values, corr_matrix = analyze_data(df)
-
-    # Debugging print
-    print("Summary Stats:")
-    print(summary_stats)
-
     outliers = detect_outliers(df)
-
-    # Debugging print
-    print("Outliers detected:")
-    print(outliers)
 
     output_dir = os.path.splitext(csv_file)[0]
     os.makedirs(output_dir, exist_ok=True)
 
-    # Visualize the data and check output paths
     heatmap_file, outliers_file, dist_plot_file = visualize_data(corr_matrix, outliers, df, output_dir)
-
-    print("Visualizations saved.")
-
-    # Generate the story using the LLM
     story = question_llm("Generate a nice and creative story from the analysis", 
                          context=f"Dataset Analysis:\nSummary Statistics:\n{summary_stats}\n\nMissing Values:\n{missing_values}\n\nCorrelation Matrix:\n{corr_matrix}\n\nOutliers:\n{outliers}")
 
@@ -276,12 +202,10 @@ def main(csv_file, api_token):
     else:
         print("Error generating the README.md file.")
 
-if __name__ == "__main__":
-    # Command-line argument parsing
-    parser = argparse.ArgumentParser(description="Automated Data Analysis")
-    parser.add_argument("csv_file", help="CSV file for analysis")
-    parser.add_argument("api_token", help="API token for authentication")  # Added API token argument
-    args = parser.parse_args()
 
-    # Run the main function with the provided CSV file and API token
-    main(args.csv_file, args.api_token)
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) < 2:
+        print("Usage: uv run autolysis.py <dataset_path>")
+        sys.exit(1)
+    main(sys.argv[1], "your_api_token")  # Assuming API token is added here
