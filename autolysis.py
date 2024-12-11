@@ -1,11 +1,14 @@
 # /// script
-# requires-python = ">=3.9"
+# requires-python = ">=3.12"
 # dependencies = [
 #   "pandas",
 #   "seaborn",
 #   "matplotlib",
 #   "numpy",
+#   "scipy",
 #   "openai",
+#   "scikit-learn",
+#   "ipykernel",  # Added ipykernel
 # ]
 # ///
 
