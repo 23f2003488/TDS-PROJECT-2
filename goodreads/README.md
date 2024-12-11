@@ -211,26 +211,4 @@ The generated visualizations and statistical insights can help in understanding 
 Based on the data analysis, here is a creative narrative that interprets the findings in an engaging and detailed manner:
 
 ## Story
-**Title: The Library of Echoes**
-
-**Introduction**
-
-In a quaint little town nestled between rolling hills and vibrant, sprawling fields, there existed a library unlike any other. This was not merely a repository of books; it was a sanctuary of stories, a realm where each volume whispered secrets and dreams into the ears of its readers. The townsfolk referred to it as the Library of Echoes, for every book held an echo of the lives it had touched, the journeys it had inspired, and the emotions it had stirred. The library was home to an extensive collection of 10,000 books, each with its own unique tale, waiting to be discovered.
-
-**Body**
-
-The Library of Echoes was meticulously organized, with a multitude of genres spanning from the classic to the contemporary. As the librarian, a wise woman named Elara, walked through the aisles, she often marveled at the statistics that defined each book’s life. On average, a book in her collection garnered about 26,000 ratings, with a surprising number of readers showering them with five-star reviews. This was not just a testament to the quality of the stories, but also a reflection of the emotional connections readers formed with the characters and plots. 
-
-Yet, every library has its mysteries. Among the rows of well-loved tomes, some books were shrouded in shadows, waiting for their moment in the spotlight. Elara noticed that a significant number of books had fewer than 1,000 ratings, while others soared to heights of over 3 million. The disparity was stark, creating an intriguing narrative of popularity versus obscurity. What were these outlier books hiding? Were they mere relics of forgotten times, or were they gems waiting to be rediscovered?
-
-As Elara delved deeper, she realized that the age of a book’s publication played a role in its reception. Books published within the last couple of decades tended to receive higher ratings, suggesting that newer narratives resonated more with the evolving tastes of readers. However, older classics still held their ground, often receiving an outpouring of admiration from those who cherished the beauty of timeless storytelling. Elara recognized a delicate balance: the new and the old, the celebrated and the overlooked, each playing a vital role in the library’s vibrant ecosystem.
-
-Moreover, the ratings were not just numbers; they were a reflection of human experience. The data revealed that for every five-star rating, there were nearly four one-star ratings, indicating the polarizing nature of literary taste. Some readers found solace in the lyrical prose of a novel, while others dismissed it as pretentious. This duality fascinated Elara, who understood that every reader brought their own experiences and biases to the pages, influencing their perception of the story. 
-
-Elara also faced the challenge of missing information. Some books lacked essential details like ISBN numbers or publication years, further complicating their histories. She pondered how many stories remained untold simply because they lacked the right context. As she worked to fill in these gaps, she felt a profound sense of responsibility to preserve the integrity of each narrative, ensuring that every voice was heard and honored.
-
-**Conclusion**
-
-As the sun dipped below the horizon, casting a warm glow over the Library of Echoes, Elara reflected on the lessons gleaned from her analysis of the data. The library was a living entity, breathing and evolving with each new book added to its collection. It served as a reminder of the importance of diversity in literature—the need for both popular voices and those quietly waiting for their turn. 
-
-Through the lens of statistics, Elara understood that every book, regardless of its ratings or reviews, had the potential to resonate with someone. The Library of Echoes was not merely a collection of stories; it was a tapestry woven from the threads of human experience, emotion, and connection. As she prepared to close the doors for the night, she knew that the echoes of these stories would continue to linger, waiting to inspire the next reader who wandered into her enchanted realm.
+Failed to generate story.
