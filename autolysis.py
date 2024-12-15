@@ -215,21 +215,30 @@ def question_llm(prompt, context):
 
         # Construct the full prompt
         full_prompt = f"""
-        Based on the following data analysis, please generate a creative and engaging story. The story should include multiple paragraphs, a clear structure with an introduction, body, and conclusion, and should feel like a well-rounded narrative.
+        Based on the following data analysis, please generate a creative and engaging summary. The summary should include multiple paragraphs, a clear structure with an introduction, body, and conclusion, and should feel like a well-rounded narrative. Ensure the summary is under 250 words but provides valuable insights.
 
-        Context:
-        {context}
+Context:  
+{context}  
 
-        Data Analysis Prompt:
-        {prompt}
+Data Analysis Prompt:  
+{prompt}  
 
-        The story should be elaborate and cover the following:
-        - An introduction to set the context.
-        - A detailed body that expands on the data points and explores their significance.
-        - A conclusion that wraps up the analysis and presents any potential outcomes or lessons.
-        - Use transitions to connect ideas and keep the narrative flowing smoothly.
-        - Format the story with clear paragraphs and structure.
-        """
+The summary should:  
+- Include an **Introduction** to set the context.  
+- Feature a detailed **Body** that expands on the data points and explores their significance.  
+- Conclude with a **Final Note** structured as **bullet points** to summarize the major findings from the data.
+
+The **Final Note** should:  
+- Provide a **concise overview** of the key insights from the analysis.  
+- Present the most important **values and statistics** from the data (e.g., mean, maximum, correlations, missing values, outliers).  
+- Focus on **actionable conclusions** and recommendations based on the analysis.  
+- Use **bullet points** for clarity and directness.
+
+Ensure the **Final Note** doesn't feel like a narrative but rather a focused summary of the analysis, with clear and concise takeaways.
+
+
+"""
+
 
         # Prepare headers
         headers = {
